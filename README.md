@@ -1,21 +1,21 @@
 # movieApp
 
 ## Deploying via Netlify
-#### 1. using netlify account
-    - After logging in to account, click on  new site from git
-    - in the create new site page under continuous deployment chose gitHub(need to log into the github account prior to this step)
-    - then search you repository and select
-    - then click deploy site
+1. using netlify account
+    - After logging in to account, click on  ```new site from git```
+    - in the create new site page under continuous deployment chose ```gitHub```(need to log into the github account prior to this step)
+    - then search you repository and select 
+    - then click ```deploy site```
     - site will be live in few seconds.
 
-#### 2. netlify + terminal
+2. netlify + terminal
     - in the VS code terminal, go into your directory and run ```npm run build```. this will create build folder in the directory
     - then in login to netlify account and click on ```site``` on the menu bar
     - go to hte directory using file explorer and drag and drop the build folder in the are that say ```Want to deploy a new site without connecting to Git?
 Drag and drop your site folder here```
     - site will be deployed in seconds
 
-#### 3. manual deploy in terminal
+3. manual deploy in terminal
     - in teh vs code terminal, run ```npm run build```
     - then run ```npm install netlify-cli -g```
     - then run ```netlify deploy```
