@@ -19,10 +19,10 @@ const App = () => {
     setSearchText(event.target.value);
   };
   // 2) https://www.omdbapi.com/?s=${searchText}&apikey=8de06584
-  // 1) `http://www.omdbapi.com/?s=${searchText}&apikey=841d3747&`
+  // 1) `https://www.omdbapi.com/?s=${searchText}&apikey=841d3747&`
   useEffect(() => {
     axios
-      .get(`http://www.omdbapi.com/?s=${searchText}&apikey=841d3747`)
+      .get(`https://www.omdbapi.com/?s=${searchText}&apikey=841d3747`)
       .then((response) => {
         console.log(response.data.Search, " this is the search result");
 

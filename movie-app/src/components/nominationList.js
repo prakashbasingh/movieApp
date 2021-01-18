@@ -5,7 +5,6 @@ function NominationList(props) {
   return (
     <div>
       <h3>Nominations</h3>
-      <span>(Only 5 Nomination Please)</span>
       {props.nominee.map((movie) => {
         console.log(movie, "this is in mapping prop to movie <==<==<==<==<==");
         return (
