@@ -1,20 +1,32 @@
 # movieApp
 
-## Deploying via Netlify
+### Live Site: https://prakashbsingh-movieapp.netlify.app/
+
+### language used
+- HTML, CSS/bootstrap, JavaScript, React
+
+### About Application
+- OMDB api is used to search movies
+- axios is used to fetch data
+- states are managed by react hooks
+- App features:
+    - as we type it will display all the movies related to typed texts
+    - has button next to each movie to add to nomination list
+    - nomination list can hold only five movies, once list has five movie all nominate button will be disabled
+    - duplicate movie can not be added (once a movie is added ot nomination list button next to that movie gets disabled but other are still enabled)
+
+### Deploying via Netlify
 1. using netlify account
     - After logging in to account, click on  ```new site from git```
     - in the create new site page under continuous deployment chose ```gitHub```(need to log into the github account prior to this step)
     - then search you repository and select 
     - then click ```deploy site```
     - site will be live in few seconds.
-
 2. netlify + terminal
     - in the VS code terminal, go into your directory and run ```npm run build```. this will create build folder in the directory
     - then in login to netlify account and click on ```site``` on the menu bar
-    - go to hte directory using file explorer and drag and drop the build folder in the are that say ```Want to deploy a new site without connecting to Git?
-Drag and drop your site folder here```
+    - go to hte directory using file explorer and drag and drop the build folder in the are that say ```Want to deploy a new site without connecting to Git? Drag and drop your site folder here```
     - site will be deployed in seconds
-
 3. manual deploy in terminal
     - in teh vs code terminal, run ```npm run build```
     - then run ```npm install netlify-cli -g```
@@ -27,10 +39,7 @@ Drag and drop your site folder here```
     - then for publish directory again delete ```(.)``` and type ```./build``` and press Enter
     - site is deployed check in the netlify account
 
-
-
-
-## Deploying via Github pages.
+### Deploying via Github pages.
 ### Steps
 1. In package.json
     - 1st give a property called ```"homepage": "https://username.github.io/repositoryName"``` before dependencies.
