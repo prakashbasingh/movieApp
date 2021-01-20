@@ -13,7 +13,9 @@
     - as we type it will display all the movies related to typed texts
     - has button next to each movie to add to nomination list
     - nomination list can hold only five movies, once list has five movie all nominate button will be disabled
-    - duplicate movie can not be added (once a movie is added ot nomination list button next to that movie gets disabled but other are still enabled)
+    - duplicate movie can not be added (once a movie is added to nomination list button next to that movie gets disabled but other are still enabled)
+    - next to every movie in the nomination list has remove button, upon clicking movie will be deleted from the nomination list
+    - movies in the nomination list are stored in the localStorage, this way list will remain upon refreshing the page.
 
 ### Deploying via Netlify
 1. using netlify account

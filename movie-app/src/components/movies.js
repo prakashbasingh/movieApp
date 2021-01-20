@@ -1,70 +1,51 @@
 import React from "react";
 import "../App.css";
+
 import NominationList from "./nominationList.js";
+import MoviesAfterSearch from "./moviesAfterSearch.js";
 
 function Movies(props) {
   console.log(props, " props in Movie.js");
-
-  // let button = document.getElementById("nominateButton");
-  // console.log(
-  //   button,
-  //   "1111111111111111111111111111111111111111111111111111111111111"
-  // );
-  // add .
-
-  // const disable = (moviess) => {
-  //   let nomineee = props.nominee;
-  //   // console.log(nomineee, "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-  //   // let button = document.getElementById("nominateButton")
-
-  //   nomineee.map((m) => {
-  //     console.log(m, "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
-  //     if (m.Title === moviess.Title) {
-  //       document.getElementById("nominateButton").disabled = true;
-  //       // alert("this is already added");
-  //     } else {
-  //       document.getElementById("nominateButton").disabled = false;
-  //     }
-  //   });
-  // };
+  const alert = () => {
+    if (props.nominee.length === 5) {
+      alert("only five nomination please");
+    }
+  };
 
   return (
     <div className="movieDiv ">
       <div className="movieDiv2">
-        <h4> results for "{props.searchText}"</h4>
-        <div className="container-fluid nameFluid">
-          <div>
+        <h4> Results for "{props.searchText}"</h4>
+        <div className="movieCont container-fluid movie-app">
+          <div className="row movieCard ">
             {props.result.map((moviess) => {
               return (
-                <div className="row" id="nominated">
-                  <img
-                    src={moviess.Poster}
-                    alt="movie poster"
-                    width="100"
-                    height="150"
-                  />
-                  <h6>{moviess.Title}</h6>
-                  <p>{moviess.Year}</p>
+                <div
+                  className="movieCard  d-flex align-items-center flex-column "
+                  id="nominated"
+                  key={moviess.imdbID}
+                >
+                  <div class="p-2">
+                    <img
+                      src={moviess.Poster}
+                      alt="movie poster"
+                      width="100"
+                      height="150"
+                    />
+                    <h6>{moviess.Title}</h6>
+                    <p>{moviess.Year}</p>
+                  </div>
                   <button
-                    // {...disable(moviess)}
                     disabled={
                       props.nominee.includes(moviess) ||
                       props.nominee.length === 5
                     }
                     id="nominateButton"
-                    className="button"
+                    className="btn button mt-auto d-flex align-items-center"
                     onClick={() => props.handleNomination(moviess)}
                   >
                     Nominate
                   </button>
-                  {/* <p
-                    style={{
-                      display:
-                        props.nominee.Title === moviess.Title
-                          ? "This has been added already"
-                          : "none",
-                    }}
-                  ></p> */}
                 </div>
               );
             })}
@@ -78,13 +59,3 @@ function Movies(props) {
   );
 }
 export default Movies;
-
-// array.forEach(function (e, i) {
-//   for (var j = i + 1; j < array.length; j++) {
-//     if (e.Tid == array[j].Tid) {
-//       // ids match, do something
-//     }
-//   }
-// });
-
-// disabled={props.nominee.length === 5}

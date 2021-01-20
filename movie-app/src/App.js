@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
 import Movies from "./components/movies.js";
@@ -18,6 +17,8 @@ const App = () => {
     event.preventDefault();
     setSearchText(event.target.value);
   };
+
+  // fetching movies data from OMDB API
   // 2) https://www.omdbapi.com/?s=${searchText}&apikey=8de06584
   // 1) https://www.omdbapi.com/?s=${searchText}&apikey=841d3747
   useEffect(() => {
@@ -62,6 +63,7 @@ const App = () => {
     );
   };
 
+  //  to add movies to the nomination list
   const addMovieToNominationList = (movie) => {
     const newNominationList = [...nominee, movie];
 
@@ -76,6 +78,7 @@ const App = () => {
     }
   };
 
+  // to remove movie from the nomination list
   const removeMovieFromNominationList = (movie) => {
     const newNominationList2 = nominee.filter(
       (nominated) => nominated.imdbID !== movie.imdbID
@@ -86,24 +89,30 @@ const App = () => {
   };
   console.log(searchText, "VVVVVVVVVVVVVVVVVVVVVVVV");
 
-  const addSpaces = (string) => {
-    let a = string;
-    a.push(" ");
-    a.unshift("");
-    return a.join("");
-  };
+  // const addSpaces = (string) => {
+  //   let a = string;
+  //   a.push(" ");
+  //   a.unshift("");
+  //   return a.join("");
+  // };
   return (
     <div className="App">
       <Header />
       {/* <SearchBox searchText={searchText} setSearchText={setSearchText} /> */}
-      <div className="col col-sm-4">
-        <input
-          className="form-control"
-          placeholder="Enter the Search Term"
-          type="text"
-          value={searchText}
-          onChange={handleChange}
-        />
+      <div className=" container form-group ">
+        <label class="col-sm-3 col-form-label" for="email">
+          Search
+        </label>
+        <div className="col-sm-9">
+          <input
+            className="form-control"
+            id="email"
+            placeholder="Enter the Search Term"
+            type="text"
+            value={searchText}
+            onChange={handleChange}
+          />
+        </div>
       </div>
 
       <Movies
@@ -112,7 +121,6 @@ const App = () => {
         handleNomination={addMovieToNominationList}
         nominee={nominee}
         handleRemove={removeMovieFromNominationList}
-        // disableButton={disableButton}
       />
     </div>
   );

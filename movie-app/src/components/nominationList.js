@@ -3,20 +3,20 @@ import React from "react";
 function NominationList(props) {
   console.log(props.nominee, "this is in nomination list <<<==========");
   return (
-    <div>
-      <h3>Nominations</h3>
+    <div className=" container" style={{ marginTop: "20px" }}>
+      <h3 class="card-title mb-0">Nominations</h3>
       {props.nominee.map((movie) => {
-        console.log(movie, "this is in mapping prop to movie <==<==<==<==<==");
         return (
-          <div>
-            <p style={{ display: "inline", padding: "10px" }}>{movie.Title}</p>
-            <button
-              className="button"
-              onClick={() => props.remove(movie)}
-              style={{ display: "inline", margin: "10px" }}
-            >
-              Remove
-            </button>
+          <div class="card">
+            <div class="card-body d-flex justify-content-around align-items-center">
+              <p class="card-text">{movie.Title}</p>
+              <button
+                className="btn btn-danger d-flex align-items-center"
+                onClick={() => props.remove(movie)}
+              >
+                Remove
+              </button>
+            </div>
           </div>
         );
       })}
